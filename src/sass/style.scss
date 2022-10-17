@@ -288,15 +288,14 @@ main {
 }
 @media (min-width: $medium) {
 	nav {
-		justify-content: space-around;
+		top: 0;
 		height: 8em;
-		.btn {
-			&--mobile-menu {
-				display: none;
-			}
+		border-radius: 0;
+		.mobile-menu {
+			display: none;
 		}
 		.desktop-menu {
-			display: flex;
+			display: inline-block;
 		}
 	}
 }
