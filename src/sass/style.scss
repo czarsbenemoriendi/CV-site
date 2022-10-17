@@ -1,0 +1,302 @@
+@use 'index.scss' as *;
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+.hidden {
+	display: none !important;
+}
+html {
+	scroll-behavior: smooth;
+	font-size: 62.5%;
+}
+body {
+	font-family: 'Lato', sans-serif;
+}
+a {
+	text-decoration: none;
+}
+p {
+	font-size: 1.5em;
+}
+nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	position: fixed;
+	z-index: 10;
+	bottom: 0;
+	width: 100%;
+	padding: 0.5em;
+	background-color: $navbar;
+	border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
+	.mobile-menu {
+		display: flex;
+		align-items: center;
+		gap: 1.2rem;
+		font-size: 1.8em;
+		overflow: hidden;
+		&__text {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			margin: auto;
+			font-size: 0.5em;
+			width: 100%;
+			text-align: center;
+		}
+		&__nav-link {
+			position: relative;
+			padding: 0.5em;
+			color: $white;
+			i {
+				margin-bottom: 0.5em;
+			}
+		}
+		.logo {
+			order: 3;
+			font-family: 'Silkscreen', cursive;
+			cursor: pointer;
+		}
+		.about-me {
+			white-space: nowrap;
+			order: 2;
+		}
+		.portfolio {
+			order: 1;
+		}
+		.contact {
+			order: 6;
+		}
+		.placeholder {
+			order: 7;
+			pointer-events: none;
+			outline: none;
+		}
+	}
+	.btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 2em;
+		border: transparent;
+		background-color: transparent;
+	}
+	.desktop-menu {
+		display: none;
+		&__nav-link {
+			padding: 0.5em;
+		}
+	}
+}
+header {
+	.hero-img {
+		position: relative;
+		z-index: 20;
+		height: 100vh;
+		height: calc(var(--vh, 1vh) * 100);
+		background-image: url('../../src/img/IMG_6575.jpeg');
+		background-position: center;
+		background-size: cover;
+		background-attachment: fixed;
+	}
+	.hero-shadow {
+		position: absolute;
+		z-index: 25;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		background-color: $shadow;
+		// filter: contrast(1.2);
+	}
+	.hero-title {
+		position: absolute;
+		z-index: 30;
+		top: 10%;
+		left: 40%;
+		transform: translate(-50%, -50%);
+		font-size: 2em;
+		mix-blend-mode: overlay;
+		color: $white;
+		font-weight: bold;
+		span {
+			color: yellow;
+		}
+	}
+	.arrow {
+		width: 38px;
+		height: 14px;
+		margin: auto;
+		text-transform: uppercase;
+		letter-spacing: 3px;
+		text-align: center;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 40px;
+		opacity: 0.5;
+		transition: (ease 1s);
+		animation: bouncey 1.6s linear infinite;
+		z-index: 30;
+		ul {
+			list-style: none;
+		}
+		li {
+			width: 24px;
+			height: 4px;
+			background: $white;
+		}
+		li:nth-child(1) {
+			left: 0;
+			top: 0;
+			position: absolute;
+			transform: rotate(45deg);
+			border-radius: (5px 0 0 5px);
+		}
+		li:nth-child(2) {
+			left: 14px;
+			position: absolute;
+			border-radius: (0 5px 5px 0);
+			top: 0;
+			transform: rotate(-45deg);
+		}
+	}
+}
+.card {
+	&__title {
+		margin: 0.7em 0 0.4em;
+		text-align: center;
+		font-size: 2.5em;
+	}
+	&__descr {
+		margin-bottom: 0.8em;
+	}
+	img {
+		width: 100%;
+		margin-bottom: 3em;
+	}
+}
+@keyframes scroll {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(calc(-250px * 7));
+	}
+}
+.slider {
+	margin: auto;
+	overflow: hidden;
+	position: relative;
+	z-index: -10;
+	// width: 150em;
+	&::before,
+	&::after {
+		content: '';
+
+		position: absolute;
+		width: 200px;
+	}
+
+	&::after {
+		right: 0;
+		top: 0;
+		transform: rotateZ(180deg);
+	}
+
+	&::before {
+		left: 0;
+		top: 0;
+	}
+
+	.slider-row {
+		animation: scroll 30s linear infinite;
+		display: flex;
+		width: calc(160px * 14);
+	}
+
+	.slide {
+		display: flex;
+		justify-content: center;
+		margin: 4em 0;
+		width: 14em;
+		img {
+			height: 6em;
+		}
+	}
+}
+// arrow animation created by Jens Lettkemann
+
+main {
+	.wrapper {
+		margin: 0 auto;
+		width: 80%;
+	}
+	h2 {
+		padding-top: 2em;
+		font-size: 3em;
+	}
+	p {
+		line-height: 1.5em;
+	}
+}
+
+.about-me-section {
+	p:first-of-type {
+		padding-top: 2em;
+	}
+	P:last-of-type {
+		margin-top: 1em;
+	}
+}
+
+.break {
+	height: 1px;
+	width: 100%;
+	background-color: $gray;
+	&--top {
+		box-shadow: 0 2px 3px 2px $gray;
+	}
+	&--bottom {
+		box-shadow: 0 -2px 3px 2px $gray;
+	}
+}
+.contact-section {
+	height: 40vh;
+	p {
+		text-align: center;
+		font-size: 2em;
+		margin: 0.5em 0 0.4em;
+	}
+	li {
+		font-size: 1.7em;
+		padding: 0.7em 0;
+	}
+	li:last-of-type {
+		padding-bottom: 8em;
+	}
+	.contact-list {
+		ul {
+			list-style: none;
+		}
+	}
+}
+@media (min-width: $medium) {
+	nav {
+		justify-content: space-around;
+		height: 8em;
+		.btn {
+			&--mobile-menu {
+				display: none;
+			}
+		}
+		.desktop-menu {
+			display: flex;
+		}
+	}
+}
