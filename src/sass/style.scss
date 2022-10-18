@@ -4,6 +4,7 @@
 	margin: 0;
 	padding: 0;
 }
+
 .hidden {
 	display: none !important;
 }
@@ -92,11 +93,13 @@ nav {
 	}
 }
 header {
+	.mobile-fix {
+		height: calc(var(--vh, 1vh) * 100) !important;
+	}
 	.hero-img {
 		position: relative;
 		z-index: 20;
 		height: 100vh;
-		height: calc(var(--vh, 1vh) * 100);
 		background-image: url('../../src/img/IMG_6575.jpeg');
 		background-position: center;
 		background-size: cover;
@@ -112,7 +115,6 @@ header {
 		width: 100%;
 		height: 100%;
 		background-color: $shadow;
-		// filter: contrast(1.2);
 	}
 	.hero-title {
 		position: absolute;
@@ -128,6 +130,7 @@ header {
 			color: yellow;
 		}
 	}
+	// arrow animation created by Jens Lettkemann
 	.arrow {
 		width: 38px;
 		height: 14px;
@@ -166,35 +169,27 @@ header {
 			transform: rotate(-45deg);
 		}
 	}
-}
-.card {
-	&__title {
-		margin: 0.7em 0 0.4em;
-		text-align: center;
-		font-size: 2.5em;
-	}
-	&__descr {
-		margin-bottom: 0.8em;
-	}
-	img {
-		width: 100%;
-		margin-bottom: 3em;
-	}
-}
-@keyframes scroll {
-	0% {
-		transform: translateX(0);
-	}
-	100% {
-		transform: translateX(calc(-250px * 7));
+	.card {
+		&__title {
+			margin: 0.7em 0 0.4em;
+			text-align: center;
+			font-size: 2.5em;
+		}
+		&__descr {
+			margin-bottom: 0.8em;
+		}
+		img {
+			width: 100%;
+			margin-bottom: 3em;
+		}
 	}
 }
+
 .slider {
 	margin: auto;
 	overflow: hidden;
 	position: relative;
 	z-index: -10;
-	// width: 150em;
 	&::before,
 	&::after {
 		content: '';
@@ -203,13 +198,13 @@ header {
 		width: 200px;
 	}
 
-	&::after {
+	.slider::after {
 		right: 0;
 		top: 0;
 		transform: rotateZ(180deg);
 	}
 
-	&::before {
+	.slider::before {
 		left: 0;
 		top: 0;
 	}
@@ -230,7 +225,6 @@ header {
 		}
 	}
 }
-// arrow animation created by Jens Lettkemann
 
 main {
 	.wrapper {
@@ -244,14 +238,13 @@ main {
 	p {
 		line-height: 1.5em;
 	}
-}
-
-.about-me-section {
-	p:first-of-type {
-		padding-top: 2em;
-	}
-	P:last-of-type {
-		margin-top: 1em;
+	.about-me-section {
+		p:first-of-type {
+			padding-top: 2em;
+		}
+		P:last-of-type {
+			margin-top: 1em;
+		}
 	}
 }
 
@@ -286,16 +279,171 @@ main {
 		}
 	}
 }
+.sticky {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: inherit;
+	width: 100%;
+}
 @media (min-width: $medium) {
+	html {
+		scroll-padding-top: 6em;
+	}
+	header {
+		.hero-img {
+			opacity: 1;
+		}
+	}
 	nav {
-		top: 0;
+		display: grid;
+		grid-template-columns: 1fr;
+		position: absolute;
+		bottom: 0;
+		left: 0;
 		height: 8em;
 		border-radius: 0;
+		background-color: $navbar;
 		.mobile-menu {
 			display: none;
 		}
 		.desktop-menu {
-			display: inline-block;
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+
+			.logo {
+				grid-column: 2/3;
+			}
+			.about-me {
+				white-space: nowrap;
+				grid-column: 9/10;
+			}
+			&__nav-link {
+				margin: auto;
+				color: white;
+				font-size: 2em;
+			}
+			a {
+				position: relative;
+			}
+			.underline,
+			.underline::before,
+			.underline::after {
+				transition: 0.3s;
+			}
+			.underline::before,
+			.underline::after {
+				content: '';
+				position: absolute;
+				width: 5px;
+				bottom: 0;
+				border-bottom: 3px white solid;
+				opacity: 0;
+			}
+			.underline::before {
+				right: 50%;
+			}
+			.underline::after {
+				left: 50%;
+			}
+			.underline:hover:before,
+			.underline:hover:after {
+				width: 50%;
+				opacity: 1;
+			}
 		}
+	}
+	main {
+		.container {
+			display: grid;
+			width: 100%;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 5px;
+			.card {
+				width: 100%;
+				.one {
+					grid-column: 1/2;
+				}
+				.two {
+					grid-column: 2/3;
+				}
+				&__title {
+					font-size: 3em;
+				}
+				&__img {
+					position: relative;
+					height: 500px;
+					width: 100%;
+					margin: 3em auto;
+					text-align: center;
+					background-position: center;
+					background-size: cover;
+					background-repeat: transparent;
+					border-radius: 10px;
+					overflow: hidden;
+
+					button {
+						font-size: 2rem;
+						position: absolute;
+						top: 10px;
+						right: 10px;
+						padding: 10px;
+						background: none;
+						border: none;
+						color: #fff;
+						text-shadow: 2px 2px 5px rgb(0, 0, 0);
+						cursor: crosshair;
+						z-index: 5;
+					}
+					button:hover ~ .card__desktop-descr {
+						clip-path: circle(110% at 50% 80%);
+					}
+				}
+				.one {
+					background-image: url('../../dist/img/portfolio/weatherApp.png');
+				}
+				.two {
+					background-image: url('../../dist/img/portfolio/pig\ game.png');
+				}
+				&__desktop-descr {
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-end;
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					padding: 80px 30px;
+					background-color: rgba(0, 0, 0, 0.85);
+					color: #fff;
+					clip-path: circle(0 at 50% 80%);
+					transition: clip-path 0.4s;
+				}
+			}
+		}
+		.wrapper {
+			width: 60%;
+		}
+		h2 {
+			font-size: 4em;
+		}
+		p {
+			font-size: 1.8em;
+		}
+
+		.about-me-section {
+			margin: 6em auto 8em;
+		}
+		.slider {
+			margin-bottom: 4em;
+			.slider-row {
+				animation: scroll 60s linear infinite;
+			}
+		}
+	}
+}
+@media (min-width: $large) {
+	main {
 	}
 }
