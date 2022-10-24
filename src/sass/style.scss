@@ -18,9 +18,6 @@ body {
 a {
 	text-decoration: none;
 }
-p {
-	font-size: 1.5em;
-}
 nav {
 	display: flex;
 	flex-direction: row;
@@ -58,7 +55,6 @@ nav {
 		}
 		.logo {
 			order: 3;
-			font-family: 'Silkscreen', cursive;
 			cursor: pointer;
 		}
 		.about-me {
@@ -126,8 +122,9 @@ header {
 		mix-blend-mode: overlay;
 		color: $white;
 		font-weight: bold;
+		transition: font-size 0.3s;
 		span {
-			color: yellow;
+			color: #201c1c;
 		}
 	}
 	// arrow animation created by Jens Lettkemann
@@ -169,29 +166,13 @@ header {
 			transform: rotate(-45deg);
 		}
 	}
-	.card {
-		&__title {
-			margin: 0.7em 0 0.4em;
-			text-align: center;
-			font-size: 2.5em;
-		}
-		&__descr {
-			margin-bottom: 0.8em;
-		}
-		img {
-			width: 100%;
-			margin-bottom: 3em;
-		}
-	}
 }
 
 .slider {
-	margin: auto;
-	overflow: hidden;
 	position: relative;
-	z-index: -10;
-	&::before,
-	&::after {
+	overflow: hidden;
+	.slider::before,
+	.slider::after {
 		content: '';
 
 		position: absolute;
@@ -220,6 +201,11 @@ header {
 		justify-content: center;
 		margin: 4em 0;
 		width: 14em;
+		&--5 {
+			img {
+				width: 85%;
+			}
+		}
 		img {
 			height: 6em;
 		}
@@ -231,19 +217,64 @@ main {
 		margin: 0 auto;
 		width: 80%;
 	}
+	.popup {
+		position: absolute;
+		background: #333;
+		width: 80%;
+		margin-top: 1em;
+		box-shadow: 5px 11px 16px 0 black;
+		z-index: 1;
+
+		p {
+			padding: 2em;
+			color: $white;
+			font-size: 1.5em;
+		}
+	}
+
+	section {
+		margin: 2em 0;
+	}
+
 	h2 {
-		padding-top: 2em;
+		display: inline-block;
+		padding-top: 1em;
 		font-size: 3em;
 	}
 	p {
 		line-height: 1.5em;
 	}
 	.about-me-section {
-		p:first-of-type {
-			padding-top: 2em;
-		}
-		P:last-of-type {
+		&__text {
 			margin-top: 1em;
+			font-size: 1.8em;
+		}
+		.about-me-informations {
+			cursor: pointer;
+			font-size: 2.5em;
+			margin-left: 0.5em;
+			background: transparent;
+			border: none;
+		}
+	}
+	.card {
+		margin-bottom: 3em;
+		&__title {
+			display: block;
+			margin: 1em 0 0.4em;
+			font-size: 2.5em;
+			text-align: center;
+		}
+		&__descr {
+			margin-bottom: 0.8em;
+			font-size: 1.8em;
+		}
+		img {
+			width: 100%;
+			margin-bottom: 3em;
+		}
+		&__img {
+			display: none;
 		}
 	}
 }
@@ -290,11 +321,7 @@ main {
 	html {
 		scroll-padding-top: 6em;
 	}
-	header {
-		.hero-img {
-			opacity: 1;
-		}
-	}
+
 	nav {
 		display: grid;
 		grid-template-columns: 1fr;
@@ -320,7 +347,7 @@ main {
 			}
 			&__nav-link {
 				margin: auto;
-				color: white;
+				color: $white;
 				font-size: 2em;
 			}
 			a {
@@ -337,7 +364,7 @@ main {
 				position: absolute;
 				width: 5px;
 				bottom: 0;
-				border-bottom: 3px white solid;
+				border-bottom: 3px $white solid;
 				opacity: 0;
 			}
 			.underline::before {
@@ -353,12 +380,19 @@ main {
 			}
 		}
 	}
+
 	main {
+		section {
+			margin: 4em auto;
+		}
+		.about-me-section {
+			margin: 6em auto 8em;
+		}
 		.container {
 			display: grid;
 			width: 100%;
 			grid-template-columns: repeat(2, 1fr);
-			gap: 5px;
+			gap: 10px;
 			.card {
 				width: 100%;
 				.one {
@@ -368,20 +402,20 @@ main {
 					grid-column: 2/3;
 				}
 				&__title {
+					margin-top: 0.9em;
 					font-size: 3em;
 				}
 				&__img {
+					display: block;
 					position: relative;
 					height: 500px;
 					width: 100%;
-					margin: 3em auto;
 					text-align: center;
 					background-position: center;
 					background-size: cover;
-					background-repeat: transparent;
+					border: transparent;
 					border-radius: 10px;
 					overflow: hidden;
-
 					button {
 						font-size: 2rem;
 						position: absolute;
@@ -420,30 +454,76 @@ main {
 					clip-path: circle(0 at 50% 80%);
 					transition: clip-path 0.4s;
 				}
+				&__desktop-descr {
+					font-size: 1.3em;
+				}
+			}
+		}
+		h2 {
+			font-size: 4em;
+			padding-top: 1em;
+		}
+		p {
+			font-size: 1.8em;
+		}
+		.slider {
+			margin-bottom: 4em;
+			.slide {
+				&--mobile {
+					display: none;
+				}
+			}
+			.slider-row {
+				width: 100%;
+				justify-content: center;
+				animation-play-state: paused;
+			}
+		}
+	}
+	.contact-section {
+		p {
+			text-align: left;
+		}
+	}
+}
+@media (min-width: $large) {
+	header {
+		.hero-title {
+			font-size: 2.5em;
+		}
+		.hero-title:hover {
+			font-size: 3em;
+		}
+	}
+	main {
+		.about-me-section {
+			p {
+				font-size: 2em;
 			}
 		}
 		.wrapper {
 			width: 60%;
 		}
-		h2 {
-			font-size: 4em;
-		}
-		p {
-			font-size: 1.8em;
-		}
-
-		.about-me-section {
-			margin: 6em auto 8em;
-		}
-		.slider {
-			margin-bottom: 4em;
-			.slider-row {
-				animation: scroll 60s linear infinite;
+		.popup {
+			width: 50%;
+			.content::before {
+				border-bottom-left-radius: 15px;
+			}
+			.content::after {
+				border-bottom-right-radius: 15px;
 			}
 		}
 	}
-}
-@media (min-width: $large) {
-	main {
+	.contact-section {
+		p {
+			font-size: 2.5rem;
+		}
+		i,
+		a {
+			font-size: 2.2rem;
+		}
+		a {
+			padding-left: 0.4em;
+		}
 	}
 }

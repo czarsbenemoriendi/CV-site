@@ -10,7 +10,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&family=Silkscreen&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&display=swap"
 			rel="stylesheet" />
 		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 		<link rel="stylesheet" href="./dist/css/style.min.css" />
@@ -75,22 +75,33 @@
 			<div class="wrapper">
 				<section id="about-me" class="about-me-section">
 					<h2>About me</h2>
-					<p class="about-me__text">
+					<button class="about-me-informations">
+						<i class="far fa-question-circle"></i>
+					</button>
+					<div class="popup hidden">
+						<p>
+							I'm 23 year old. Currently I'm working in the caffee. In my
+							previous job I was a manager there for almost a year. I belive
+							that thanks to this I have a high level of communication with
+							people. I also have a high level of preparation a delicious
+							coffee. I learned many other skills in this place such as the fact
+							that the most important thing in working with clients is to
+							understand the client's needs. If we care about them, they will
+							come back.
+						</p>
+					</div>
+					<p class="about-me-section__text">
 						I'm a self-taught front-end developer. I started learning with Udemy
 						courses and now I'm practicing my skills in my free time, I love it
 						and I do it for myself. I would like to find a place where I could
 						practicing my skills.
 					</p>
-					<p class="about-me__text">
+					<p class="about-me-section__text">
 						I'm searching for work where I could keep practicing my programming
 						skills. I want to learning not only during my free time. I'm hungry
-						for knowledge. In my previous job I was a manager there for almost a
-						year. I belive that thanks to this I have a high level of
-						communication with people. I also have a high level of preparation a
-						delicious coffee. I learned many other skills in this place such as
-						the fact that the most important thing in working with clients is to
-						understand the client's needs. If we care about them, they will come
-						back.
+						for knowledge. I have well-developed interpersonal skills. And I am
+						passionate about sports. I love going to the gym. Thanks to this I
+						built up my confidence.
 					</p>
 				</section>
 			</div>
@@ -108,9 +119,7 @@
 							alt="." />
 					</div>
 					<div class="slide slide--4">
-						<img
-							src="./dist/img/slider-images/590px-Node.js_logo.svg.png"
-							alt="." />
+						<img src="./dist/img/slider-images/gulp-logo.png" alt="." />
 					</div>
 					<div class="slide slide--5">
 						<img
@@ -125,31 +134,29 @@
 							src="./dist/img/slider-images/icons8-bootstrap-480.png"
 							alt="." />
 					</div>
-					<div class="slide slide--1">
+					<div class="slide slide--1 slide--mobile">
 						<img src="./dist/img/slider-images/icons8-html-5-480.png" alt="." />
 					</div>
-					<div class="slide slide--2">
+					<div class="slide slide--2 slide--mobile">
 						<img src="./dist/img/slider-images/icons8-css3-480.png" alt="." />
 					</div>
-					<div class="slide slide--3">
+					<div class="slide slide--3 slide--mobile">
 						<img
 							src="./dist/img/slider-images/Unofficial_JavaScript_logo_2.svg.png"
 							alt="." />
 					</div>
-					<div class="slide slide--4">
-						<img
-							src="./dist/img/slider-images/590px-Node.js_logo.svg.png"
-							alt="." />
+					<div class="slide slide--4 slide--mobile">
+						<img src="./dist/img/slider-images/gulp-logo.png" alt="." />
 					</div>
-					<div class="slide slide--5">
+					<div class="slide slide--5 slide--mobile">
 						<img
 							src="./dist/img/slider-images/640px-Npm-logo.svg.png"
 							alt="." />
 					</div>
-					<div class="slide slide--6">
+					<div class="slide slide--6 slide--mobile">
 						<img src="./dist/img/slider-images/Sass-Logo-500x313.png" alt="." />
 					</div>
-					<div class="slide slide--7">
+					<div class="slide slide--7 slide--mobile">
 						<img
 							src="./dist/img/slider-images/icons8-bootstrap-480.png"
 							alt="." />
@@ -157,19 +164,29 @@
 				</div>
 			</div>
 			<div class="break break--top"></div>
-			<div class="wrapper">
-				<section id="portfolio">
+			<div class="wrapper wrapper--tablet">
+				<section id="portfolio" class="portfolio-section">
 					<h2>Portfolio</h2>
 					<div class="container">
 						<div class="card">
-							<h3 class="card__title">WeatherApp</h3>
+							<a
+								href="https://weatherap-plication.netlify.app/"
+								rel="noopener"
+								target="_blank"
+								class="card__title"
+								>WeatherApp</a
+							>
 							<p class="card__descr">
 								My very first project in JS was a weatherApp. It's responsive
 								and had a few shortcomings, but I'm proud of myself, that I made
 								it. When i Was creating this project, I used there flexbox, API
 								from openweather. The entire project was published on netlify.
 							</p>
-							<div class="card__img one">
+							<img
+								src="./dist/img/portfolio/weatherApp.png"
+								alt="weatherapp screenshoot"
+								class="mobile-app-scr" />
+							<button class="card__img one">
 								<p class="card__desktop-descr hidden">
 									My very first project in JS was a weatherApp. It's responsive
 									and had a few shortcomings, but I'm proud of myself, that I
@@ -177,25 +194,34 @@
 									flexbox, API from openweather. The entire project was
 									published on netlify.
 								</p>
-							</div>
+							</button>
 						</div>
 						<div class="card">
-							<h3 class="card__title">Pig game</h3>
+							<a
+								href="https://gm-pig.netlify.app/"
+								rel="noopener"
+								target="_blank"
+								class="card__title"
+								>Pig game</a
+							>
 							<p class="card__descr">
-								Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-								Adipisci nobis culpa at voluptas ea quidem eaque, suscipit
-								repellat explicabo, delectus maiores, officia cumque perferendis
-								hic alias minus distinctio a eos.
+								This game I made during Udemy course. I recreate these project
+								by myself. During building these application I learned a strong
+								foundation of JS. My friends says that this app gave them a lot
+								of fun.
 							</p>
-							<div class="card__img two">
+							<img
+								src="./dist/img/portfolio/pig game.png"
+								alt="screenshoot from pig game app"
+								class="mobile-app-scr" />
+							<button class="card__img two">
 								<p class="card__desktop-descr hidden">
-									My very first project in JS was a weatherApp. It's responsive
-									and had a few shortcomings, but I'm proud of myself, that I
-									made it. When i Was creating this project, I used there
-									flexbox, API from openweather. The entire project was
-									published on netlify.
+									This game I made during Udemy course. I recreate these project
+									by myself. During building these application I learned a
+									strong foundation of JS. My friends says that this app gave
+									them a lot of fun.
 								</p>
-							</div>
+							</button>
 						</div>
 					</div>
 				</section>
@@ -261,6 +287,6 @@
 		<script>
 			AOS.init();
 		</script>
-		<script src="./dist/js/js.min.js"></script>
+		<script src="./dist/js/app.min.js"></script>
 	</body>
 </html>
