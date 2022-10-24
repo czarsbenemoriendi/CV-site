@@ -4,7 +4,10 @@
 	margin: 0;
 	padding: 0;
 }
-
+.wrapper {
+	margin: 0 auto;
+	width: 80%;
+}
 .hidden {
 	display: none !important;
 }
@@ -213,10 +216,6 @@ header {
 }
 
 main {
-	.wrapper {
-		margin: 0 auto;
-		width: 80%;
-	}
 	.popup {
 		position: absolute;
 		background: #333;
@@ -233,7 +232,7 @@ main {
 	}
 
 	section {
-		margin: 2em 0;
+		margin: 2em auto;
 	}
 
 	h2 {
@@ -291,7 +290,6 @@ main {
 	}
 }
 .contact-section {
-	height: 40vh;
 	p {
 		text-align: center;
 		font-size: 2em;
@@ -301,8 +299,8 @@ main {
 		font-size: 1.7em;
 		padding: 0.7em 0;
 	}
-	li:last-of-type {
-		padding-bottom: 8em;
+	li:nth-child(4) {
+		margin-bottom: 4em;
 	}
 	.contact-list {
 		ul {
@@ -316,6 +314,19 @@ main {
 	left: 0;
 	bottom: inherit;
 	width: 100%;
+}
+footer {
+	height: 14em;
+	.wrapper {
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	p {
+		font-size: 1.5em;
+		text-align: center;
+	}
 }
 @media (min-width: $medium) {
 	html {
@@ -383,7 +394,7 @@ main {
 
 	main {
 		section {
-			margin: 4em auto;
+			margin: 4em auto 7em;
 		}
 		.about-me-section {
 			margin: 6em auto 8em;
@@ -485,7 +496,14 @@ main {
 			text-align: left;
 		}
 	}
+	footer {
+		height: 10em;
+		p {
+			font-size: 2em;
+		}
+	}
 }
+
 @media (min-width: $large) {
 	header {
 		.hero-title {
