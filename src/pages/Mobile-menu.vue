@@ -1,22 +1,18 @@
 <template>
-	<nav class="mobile-menu">
-		<a href="#home" class="mobile-menu__nav-link logo">p4w3l</a>
+  <nav class="mobile-menu">
+    <a href="#home" class="mobile-menu__nav-link logo">p4w3l</a>
 
-		<a href="#about-me" class="mobile-menu__nav-link about-me"
-			><i class="fa-solid fa-question"></i>
-			<p class="mobile-menu__text">About me</p>
-		</a>
-		<a href="#portfolio" class="mobile-menu__nav-link portfolio"
-			><i class="fa-regular fa-lightbulb"></i>
-			<p class="mobile-menu__text">Portfolio</p></a
-		>
-		<a href="#contact" class="mobile-menu__nav-link contact"
-			><i class="fa-regular fa-envelope"></i>
-			<p class="mobile-menu__text">Contact</p></a
-		>
-		<a href="#" disabled="disabled" aria-disabled="true" class="mobile-menu__nav-link placeholder"></a>
-	</nav>
+    <a href="#about-me" class="mobile-menu__nav-link about-me"><i class="fa-solid fa-question" />
+      <p class="mobile-menu__text">About me</p>
+    </a>
+    <a href="#portfolio" class="mobile-menu__nav-link portfolio"><i class="fa-regular fa-lightbulb" />
+      <p class="mobile-menu__text">Portfolio</p></a>
+    <a href="#contact" class="mobile-menu__nav-link contact"><i class="fa-regular fa-envelope" />
+      <p class="mobile-menu__text">Contact</p></a>
+    <a href="#" disabled="disabled" aria-disabled="true" class="mobile-menu__nav-link placeholder" />
+  </nav>
 </template>
+
 <style scoped lang="scss">
 nav {
 	display: flex;

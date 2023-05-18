@@ -1,14 +1,16 @@
 <script setup lang="ts"></script>
+
 <template>
-	<header id="home" class="grid">
-		<div class="hero-img bg-center bg-cover w-screen h-screen col-span-full row-span-full grid grid-cols-4 grid-rows-4">
-			<div class="hero-shadow"></div>
-			<div class="hero-title">
-				<h1>Paweł Niedużak</h1>
-			</div>
-		</div>
-	</header>
+  <header id="home" class="grid">
+    <div class="hero-img bg-center bg-cover w-full h-full col-span-full row-span-full grid grid-cols-4 grid-rows-4">
+      <div class="hero-shadow" />
+      <div class="hero-title">
+        <h1>Paweł Niedużak</h1>
+      </div>
+    </div>
+  </header>
 </template>
+
 <style scoped>
 :root {
 	--shadow: rgb(255, 1, 1);
@@ -20,7 +22,7 @@ header .hero-img {
 	position: relative;
 	z-index: 20;
 	height: 100vh;
-	background-image: url('/public/img/IMG_6575.jpeg');
+	background-image: url('/img/IMG_6575.jpeg');
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;

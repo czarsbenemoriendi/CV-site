@@ -1,36 +1,44 @@
 <script lang="ts" setup>
-import { ref } from 'vue';
-import { AboutMeSection, PortfolioSection, MobileMenu, Header, Footer, BreakLine, ContactSection, DesktopMenu } from './components/index';
+import { AboutMeSection, BreakLine, ContactSection, DesktopMenu, Footer, Header, MobileMenu, PortfolioSection } from './pages/index'
+import { useIsMobile } from './composables/isMobile'
 
-const mobileDevice = ref(true);
-const desktopDevice = ref(false);
-
-if (window.innerWidth >= 768) {
-	mobileDevice.value = false;
-	desktopDevice.value = true;
-}
+const { mobileDevice, desktopDevice } = useIsMobile()
 </script>
+
 <template>
-	<div>
-		<header>
-			<Header />
-		</header>
-		<nav>
-			<MobileMenu v-show="mobileDevice" />
-			<DesktopMenu v-show="desktopDevice" />
-		</nav>
-		<main>
-			<div class="wrapper">
-				<AboutMeSection />
-				<BreakLine class="break--top" />
-				<PortfolioSection />
-				<BreakLine class="break--bottom" />
-				<ContactSection />
-				<BreakLine class="break--top" />
-			</div>
-		</main>
-		<footer>
-			<Footer />
-		</footer>
-	</div>
+  <div>
+    <header>
+      <Header />
+    </header>
+    <nav>
+      <MobileMenu v-if="mobileDevice" />
+      <DesktopMenu v-if="desktopDevice" />
+    </nav>
+    <main>
+      <div class="wrapper">
+        <AboutMeSection />
+      </div>
+      <BreakLine class="break--top" />
+      <div class="wrapper">
+        <PortfolioSection />
+      </div>
+      <BreakLine class="break--bottom" />
+      <div class="wrapper">
+        <ContactSection />
+      </div>
+      <BreakLine class="break--top" />
+    </main>
+    <footer>
+      <Footer />
+    </footer>
+  </div>
 </template>
+
+<style scoped>
+.break--top {
+  box-shadow: 0 2px 3px 2px gray;
+}
+.break--bottom {
+  box-shadow: 0 -2px 3px 2px gray;
+}
+</style>
