@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { Modal } from '../components/index'
-import { aboutMeText } from '../constants/index'
+import { aboutMeTexts } from '../constants/index'
 
-const { firstParagraph, secondParagraph } = aboutMeText
+const { firstParagraph, secondParagraph } = aboutMeTexts
 </script>
 
 <template>

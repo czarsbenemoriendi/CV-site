@@ -10,7 +10,13 @@ interface ProjectTypes {
   title: string
   alt: string
 }
+interface ContactProps {
+  icon: string
+  href: string
+  title: string
+}
 export type {
   CardOptionsProps,
   ProjectTypes,
+  ContactProps,
 }

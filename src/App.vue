@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import { AboutMeSection, BreakLine, ContactSection, DesktopMenu, Footer, Header, MobileMenu, PortfolioSection } from './pages/index'
+import { AboutMeSection, BreakLine, ContactSection, Footer, Header, PortfolioSection } from './pages/index'
+import { DesktopNav, MobileNav, Wrapper } from './components/index'
 import { useIsMobile } from './composables/isMobile'
 
 const { mobileDevice, desktopDevice } = useIsMobile()
@@ -11,21 +12,21 @@ const { mobileDevice, desktopDevice } = useIsMobile()
       <Header />
     </header>
     <nav>
-      <MobileMenu v-if="mobileDevice" />
-      <DesktopMenu v-if="desktopDevice" />
+      <MobileNav v-if="mobileDevice" />
+      <DesktopNav v-if="desktopDevice" />
     </nav>
     <main>
-      <div class="wrapper">
+      <Wrapper>
         <AboutMeSection />
-      </div>
+      </Wrapper>
       <BreakLine class="break--top" />
-      <div class="wrapper">
+      <Wrapper>
         <PortfolioSection />
-      </div>
+      </Wrapper>
       <BreakLine class="break--bottom" />
-      <div class="wrapper">
+      <Wrapper>
         <ContactSection />
-      </div>
+      </Wrapper>
       <BreakLine class="break--top" />
     </main>
     <footer>

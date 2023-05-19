@@ -12,12 +12,12 @@ import { projects } from '../constants/index'
   </section>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
 @media (min-width: 768px) {
-	.container {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 10px;
-	}
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
 }
 </style>
