@@ -3,7 +3,7 @@ import { AboutMeContent } from '../components/index'
 </script>
 
 <template>
-  <section id="about-me" class="relative">
+  <section id="about-me">
     <AboutMeContent />
   </section>
 </template>

@@ -47,3 +47,12 @@ const color = ref('teal')
     </v-bottom-navigation>
   </v-layout>
 </template>
+
+<style scoped>
+.v-bottom-navigation {
+  z-index: initial !important;
+}
+.v-bottom-navigation .v-bottom-navigation__content > .v-btn {
+  min-width: initial;
+}
+</style>

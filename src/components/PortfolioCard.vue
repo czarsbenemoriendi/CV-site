@@ -16,7 +16,7 @@ const { desktopDevice } = useIsMobile()
     <button class="card__img">
       <img :src="project.src" :alt="project.alt" class="desktop-screenshoot">
       <button><i class="far fa-question-circle" /></button>
-      <TextBlock class="card__desktop-description" :text="props.project.text" />
+      <TextBlock class="card__desktop-description xl:text-lg" :text="props.project.text" />
     </button>
   </div>
   <div v-else class="card">

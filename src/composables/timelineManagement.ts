@@ -1,5 +1,9 @@
 import { computed, ref } from 'vue'
-import type { TimelineType } from '../types/index'
+
+// import type { TimelineType } from '../types/index'
+interface TimelineType {
+  [index: number]: any
+}
 
 export function useTimelineManagement() {
   const picked = ref(false)

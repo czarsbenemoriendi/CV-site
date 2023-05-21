@@ -1,4 +1,4 @@
-<script setup lang='ts'>
+<script setup lang="ts">
 import { useTimelineManagement } from '../composables/timelineManagement'
 import { useIsMobile } from '../composables/isMobile'
 import { Movie, TextBlock } from '../components/index'
@@ -9,8 +9,8 @@ const { picked, setIndex, text } = useTimelineManagement()
 </script>
 
 <template>
-  <main>
-    <div class="grid place-content-center">
+  <main class="w-full">
+    <div class="grid place-content-center w-full md:place-content-start">
       <h2 class="pb-8">
         Timeline & movie
       </h2>
@@ -30,7 +30,7 @@ const { picked, setIndex, text } = useTimelineManagement()
     >
       <TextBlock :text="text" class="py-7 px-6" />
     </div>
-    <TextBlock v-if="mobileDevice" class="grid place-content-center pt-10">
+    <TextBlock v-if="mobileDevice" class="grid place-content-center pt-10 text-center">
       See me on desktop device, please!
     </TextBlock>
   </main>

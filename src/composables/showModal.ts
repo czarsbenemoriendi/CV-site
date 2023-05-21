@@ -11,6 +11,7 @@ export function useShowModal() {
       onConfirm() {
         close()
       },
+      text: popupText,
     },
     slots: {
       default: popupText,

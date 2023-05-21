@@ -3,7 +3,7 @@ import { TimelineContent } from '../components/index'
 </script>
 
 <template>
-  <section id="timeline" class="grid place-content-center w-full py-10">
+  <section id="timeline" class="grid place-content-center w-full">
     <TimelineContent />
   </section>
 </template>

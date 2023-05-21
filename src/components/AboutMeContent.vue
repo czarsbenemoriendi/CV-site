@@ -6,7 +6,7 @@ const { firstParagraph, secondParagraph } = aboutMeTexts
 </script>
 
 <template>
-  <div class="flex justify-center items-center">
+  <div class="title-box">
     <h2>
       About me
     </h2>
@@ -17,3 +17,16 @@ const { firstParagraph, secondParagraph } = aboutMeTexts
     <TextBlock :text="secondParagraph" />
   </div>
 </template>
+
+<style scoped>
+.title-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  .title-box {
+    justify-content: flex-start;
+  }
+}
+</style>

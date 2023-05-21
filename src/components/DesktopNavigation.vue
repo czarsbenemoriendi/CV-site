@@ -36,7 +36,6 @@ const { sticky } = useAddSticky()
 .desktop-menu__nav-link {
   margin: auto;
   color: white;
-  font-size: 2em;
 }
 .desktop-menu a {
   position: relative;
@@ -72,7 +71,6 @@ const { sticky } = useAddSticky()
 }
 @media (min-width: 768px) {
   .desktop-menu__nav-link {
-    font-size: 1.6rem;
     padding: 1rem 0.5rem;
   }
   .desktop-menu .highlight::before, .desktop-menu .highlight::after {
