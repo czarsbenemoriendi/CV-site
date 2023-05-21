@@ -16,11 +16,11 @@ const emit = defineEmits<{
     content-class="flex flex-col max-w-xl mx-4 p-4 bg-white dark:bg-gray-900 border dark:border-gray-700 rounded-lg space-y-2"
     :teleport-to="false"
   >
-    <h1 class="text-xl">
+    <h1>
       {{ title }}
     </h1>
-    <slot />
-    <button class="mt-1 ml-auto px-2 border rounded-lg" @click="emit('confirm')">
+    <p><slot /></p>
+    <button class="mt-1 ml-auto px-2 border rounded-lg text-lg" @click="emit('confirm')">
       Confirm
     </button>
   </VueFinalModal>

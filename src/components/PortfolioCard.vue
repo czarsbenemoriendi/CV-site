@@ -1,6 +1,6 @@
 <script setup lang='ts'>
-import { defineProps } from 'vue'
 import { useIsMobile } from '../composables/isMobile'
+import { TextBlock } from '../components/index'
 import type { ProjectTypes } from '../types/index'
 
 const props = defineProps<{
@@ -16,17 +16,13 @@ const { desktopDevice } = useIsMobile()
     <button class="card__img">
       <img :src="project.src" :alt="project.alt" class="desktop-screenshoot">
       <button><i class="far fa-question-circle" /></button>
-      <p class="card__desktop-description">
-        {{ props.project.text }}
-      </p>
+      <TextBlock class="card__desktop-description" :text="props.project.text" />
     </button>
   </div>
   <div v-else class="card">
     <a :href="project.href" rel="noopener" target="_blank">{{ props.project.title }}</a>
-    <p class="card__description">
-      {{ props.project.text }}
-    </p>
-    <img :src="project.src" :alt="project.alt">
+    <TextBlock class="card__description" :text="props.project.text" />
+    <img :src="project.src" :alt="project.alt" class="w-full">
   </div>
 </template>
 
@@ -41,8 +37,11 @@ const { desktopDevice } = useIsMobile()
 .card__description {
   padding-bottom: 2rem;
 }
+
 @media (min-width: 768px) {
+
   .card__img {
+background: transparent;
     display: block;
     position: relative;
     height: 500px;
@@ -75,8 +74,8 @@ const { desktopDevice } = useIsMobile()
     flex-direction: column;
     justify-content: flex-end;
     position: absolute;
-    top: 0;
-    bottom: 0;
+    top: -200px;
+    bottom: -20px;
     left: 0;
     right: 0;
     padding: 80px 30px;
@@ -88,7 +87,6 @@ const { desktopDevice } = useIsMobile()
   .card .desktop-screenshoot {
     width: 100%;
     height: 100%;
-    background-size: cover;
   }
 }
 </style>

@@ -6,10 +6,11 @@ const { sticky } = useAddSticky()
 
 <template>
   <div ref="sticky" class="desktop-menu">
-    <a href="#home" class="desktop-menu__nav-link logo line">p4w3l</a>
-    <a href="#about-me" class="desktop-menu__nav-link about-me line">About me</a>
-    <a href="#portfolio" class="desktop-menu__nav-link portfolio line">Portfolio</a>
-    <a href="#contact" class="desktop-menu__nav-link contact line">Contact</a>
+    <a href="#home" class="desktop-menu__nav-link logo highlight">p4w3l</a>
+    <a href="#about-me" class="desktop-menu__nav-link about-me highlight">About me</a>
+    <a href="#timeline" class="desktop-menu__nav-link timeline highlight">Timeline</a>
+    <a href="#portfolio" class="desktop-menu__nav-link portfolio highlight">Portfolio</a>
+    <a href="#contact" class="desktop-menu__nav-link contact highlight">Contact</a>
   </div>
 </template>
 
@@ -40,10 +41,10 @@ const { sticky } = useAddSticky()
 .desktop-menu a {
   position: relative;
 }
-.desktop-menu .line, .desktop-menu .line::before, .desktop-menu .line::after {
+.desktop-menu .highlight, .desktop-menu .highlight::before, .desktop-menu .highlight::after {
   transition: 0.3s;
 }
-.desktop-menu .line::before, .desktop-menu .line::after {
+.desktop-menu .highlight::before, .desktop-menu .highlight::after {
   content: '';
   position: absolute;
   width: 5px;
@@ -51,13 +52,13 @@ const { sticky } = useAddSticky()
   border-bottom: 3px white solid;
   opacity: 0;
 }
-.desktop-menu .line::before {
+.desktop-menu .highlight::before {
   right: 50%;
 }
-.desktop-menu .line::after {
+.desktop-menu .highlight::after {
   left: 50%;
 }
-.desktop-menu .line:hover:before, .desktop-menu .line:hover:after {
+.desktop-menu .highlight:hover:before, .desktop-menu .highlight:hover:after {
   width: 50%;
   opacity: 1;
 }
@@ -74,5 +75,8 @@ const { sticky } = useAddSticky()
     font-size: 1.6rem;
     padding: 1rem 0.5rem;
   }
+  .desktop-menu .highlight::before, .desktop-menu .highlight::after {
+  bottom: 10px;
+}
 }
 </style>

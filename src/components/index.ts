@@ -6,5 +6,12 @@ import HeroImg from './HeroImg.vue'
 import MobileNav from './MobileNavigation.vue'
 import DesktopNav from './DesktopNavigation.vue'
 import Wrapper from './Wrapper.vue'
+import AboutMeContent from './AboutMeContent.vue'
+import BreakLine from './Break-line.vue'
+import PortfolioContent from './PortfolioContent.vue'
+import ContactContent from './ContactContent.vue'
+import TimelineContent from './TimelineContent.vue'
+import Movie from './MovieAboutMe.vue'
+import TextBlock from './TextBlock.vue'
 
-export { Modal, ModalConfirm, PortfolioCard, HeroImg, MobileNav, DesktopNav, Wrapper, ContactItem }
+export { TextBlock, Movie, TimelineContent, ContactContent, PortfolioContent, BreakLine, Modal, ModalConfirm, PortfolioCard, HeroImg, MobileNav, DesktopNav, Wrapper, ContactItem, AboutMeContent }

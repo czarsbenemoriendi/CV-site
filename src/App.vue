@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { AboutMeSection, BreakLine, ContactSection, Footer, Header, PortfolioSection } from './pages/index'
-import { DesktopNav, MobileNav, Wrapper } from './components/index'
+import { AboutMeSection, ContactSection, Footer, Header, PortfolioSection, Timeline } from './pages/index'
+import { BreakLine, DesktopNav, MobileNav, Wrapper } from './components/index'
 import { useIsMobile } from './composables/isMobile'
 
 const { mobileDevice, desktopDevice } = useIsMobile()
@@ -18,6 +18,10 @@ const { mobileDevice, desktopDevice } = useIsMobile()
     <main>
       <Wrapper>
         <AboutMeSection />
+      </Wrapper>
+      <BreakLine class="break--bottom" />
+      <Wrapper>
+        <Timeline />
       </Wrapper>
       <BreakLine class="break--top" />
       <Wrapper>

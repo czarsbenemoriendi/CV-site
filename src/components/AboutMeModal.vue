@@ -6,8 +6,8 @@ const { open, ModalsContainer } = useShowModal()
 
 <template>
   <div>
-    <button @click="() => open()">
-      <i class="far fa-question-circle" />
+    <button class="bg-transparent border-none" @click="() => open()">
+      <i class="far fa-question-circle color-black text-size-2xl cursor-pointer" />
     </button>
     <ModalsContainer />
   </div>

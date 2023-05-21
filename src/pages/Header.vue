@@ -7,5 +7,3 @@ import { HeroImg } from '../components/index'
     <HeroImg />
   </header>
 </template>
-
-<style scoped></style>

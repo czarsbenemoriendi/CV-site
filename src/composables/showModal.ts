@@ -16,5 +16,5 @@ export function useShowModal() {
       default: popupText,
     },
   })
-  return { open, close, ModalsContainer }
+  return { open, ModalsContainer }
 }
