@@ -40,4 +40,4 @@ Currently, I am working on implementing the mockup that I prepared in Figma. I w
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* [Stefan Kodidl](https://stefankoidl.artstation.com/)
+* [Stefan Koidl](https://stefankoidl.artstation.com/)
